@@ -1,0 +1,17 @@
+Para conseguirmos usar a linha de comando, é preciso ir até o diretório onde está localizado o MySQL
+
+No cmd do Windows, vamos digitar os comandos:
+
+cd\
+cd "Program Files"
+dir
+cd "MySQL Server 8.0"
+dir
+cd bin
+dir mysql.exe
+
+mysql -h localhost -u root -p
+
+(sendo o "-h" servidor (host) e o "localhost" o meu próprio servidor - Localhost é o nome da nossa própria máquina).
+( acrescentamos -u ao nosso comando,root que é o nosso usuário e root -p, sendo -p a senha)
+
