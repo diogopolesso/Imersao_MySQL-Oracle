@@ -3,3 +3,4 @@ WHERE MATRICULA = '00236';
 
 UPDATE Tabela_de_vendedores SET NOME = 'José Geraldo da Fonseca Junior'
 WHERE MATRICULA = '00233';
+
