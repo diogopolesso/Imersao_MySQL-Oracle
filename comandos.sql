@@ -4,8 +4,14 @@ SELECT 'SELECIONAR'
 * 'o asterisco indica que você deseja mostrar todos os campos'
 FROM 'A PARTIR DE'
 USE 'USE'
-AND 'E'
-OR 'OU'
+
+AND 'E' 'mostra um registro se ambas as condições forem verdadeiras'
+OR 'OU' 'mostra um registro se pelo menos uma das condições for verdadeira'
+NOT 'é a negação de uma expressão (inverte seu estado lógico)'.
+
+'AND, OR e NOT são usados para filtrar registros baseados em mais de uma condição.
+
+
 CREATE DATABASE 'CRIAR UM BANCO DE DADOS'
 DROP DATABASE 'DELETAR UM BANCO DE DADOS'
 INSERT INTO ...
