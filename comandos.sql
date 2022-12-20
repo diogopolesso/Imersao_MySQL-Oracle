@@ -40,5 +40,15 @@ BETWEEN 'permite selecionar intervalos de dados ao retornar os resultados de uma
 DISTINCT 'distinto, diferente. retorna somente linhas com valores diferentes e vamos usá-lo depois do SELECT e antes da exibição dos campos.'
 
 ORDER BY 'Apresenta o resultado da consulta ordenado pelo campo determinado'
+DESC 'Altera a ordem do' ORDER BY 'MAIOR PARA O MENOR'
+ASC 'Altera a ordem do' ORDER BY 'MENOR PARA O MAIOR'
 
+GROUP BY 'apresenta o resultado agrupando valores numéricos por uma chave de critério'
+SUM 'SOMA'
+MAX 'MÁXIMO'
+MIN 'MÍNIMO'
+AVG 'MÉDIA'
+COUNT 'CONTA OCORRÊNCIAS'
+
+HAVING 'APLICA O RESULTADO DE UMA AGRAGAÇÃO'
 
