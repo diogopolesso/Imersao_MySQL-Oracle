@@ -16,6 +16,7 @@ NOT 'é a negação de uma expressão (inverte seu estado lógico)'.
 
 'AND, OR e NOT são usados para filtrar registros baseados em mais de uma condição'.
 
+IN 'CONTIDO'
 
 CREATE DATABASE 'CRIAR UM BANCO DE DADOS'
 DROP DATABASE 'DELETAR UM BANCO DE DADOS'
