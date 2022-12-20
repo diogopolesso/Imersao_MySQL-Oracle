@@ -4,6 +4,7 @@ SELECT 'SELECIONAR'
 * 'o asterisco indica que você deseja mostrar todos os campos'
 FROM 'A PARTIR DE'
 USE 'USE'
+END 'FIM'
 
 AND 'E' 'mostra um registro se ambas as condições forem verdadeiras'
 'EX.: V COM V = V, V COM F = F, F COM V = F, F COM F = F'
@@ -51,4 +52,12 @@ AVG 'MÉDIA'
 COUNT 'CONTA OCORRÊNCIAS'
 
 HAVING 'APLICA O RESULTADO DE UMA AGRAGAÇÃO'
+
+CASE 'serve para se fazer testes em um ou mais campos e,
+quando determinada condição for atendida, então seguiremos por um caminho,
+senão continuamos por outro.' 
+'CASE VEM ACOMPANHADO DOS TERMOS:'
+WHEN 'QUANDO'
+THEN 'ENTÃO'
+ELSE 'SENÃO' 'é executado, funcionando como desvio para um outro valor já estabelecido'
 
