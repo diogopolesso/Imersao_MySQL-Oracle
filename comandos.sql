@@ -17,6 +17,8 @@ NOT 'é a negação de uma expressão (inverte seu estado lógico)'.
 'AND, OR e NOT são usados para filtrar registros baseados em mais de uma condição'.
 
 IN 'CONTIDO'
+LIKE '%...' "usado para representar qualquer registro genérico que venha antes ou depois do texto que estamos procurando.
+% é um caractere curinga em determinado trecho de uma strings, varchar e char, equivalente ao * quando manipulamos arquivos."
 
 CREATE DATABASE 'CRIAR UM BANCO DE DADOS'
 DROP DATABASE 'DELETAR UM BANCO DE DADOS'
@@ -27,10 +29,16 @@ DELETE FROM ...
 ALTER TABLE ... 'ALTERAR TABELA'
 ADD PRIMARY KEY() 'ADICIONA UMA CHAVE PRIMARIA'
 ADD COLUMN()
-LIMIT
+LIMIT ' limita a saída de dados.
+O número que colocamos depois de LIMITdirá quantas linhas serão exibidas.'
+
 AS ALIASES 'ALIAS'
 
 BETWEEN 'permite selecionar intervalos de dados ao retornar os resultados de uma consulta.
 (ex.: retornar registros cujos preços estejam entre dois valores distintos, ou registros contidos dentro de um intervalo de datas especificado)'.
+
+DISTINCT 'distinto, diferente. retorna somente linhas com valores diferentes e vamos usá-lo depois do SELECT e antes da exibição dos campos.'
+
+ORDER BY 'Apresenta o resultado da consulta ordenado pelo campo determinado'
 
 
