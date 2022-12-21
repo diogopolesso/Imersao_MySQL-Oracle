@@ -60,4 +60,3 @@ senão continuamos por outro.'
 WHEN 'QUANDO'
 THEN 'ENTÃO'
 ELSE 'SENÃO' 'é executado, funcionando como desvio para um outro valor já estabelecido'
-
