@@ -64,11 +64,26 @@ ELSE 'SENÃO' 'é executado, funcionando como desvio para um outro valor já est
 JOIN 'permitem unir duas ou mais tabelas dentro de uma única consulta SQL. Basta que essas tabelas tenham um campo em comum.'
 
 TIPOS DE JOIN:
+
 INNER JOIN 'buscar a intersecção entre as tabelas, Ou seja, resulta em uma tabela que traz os valores que estão em ambas as tabelas iniciais.'
+
+SELECT * FROM tabela_de_vendedores A INNER JOIN notas_fiscais B ON A.MATRICULA = B.MATRICULA;
+
 LEFT JOIN 'Resulta em uma tabela que exibe somente os itens da tabela da esquerda, incluindo os itens em interseção com a tabela direita. Contudo,
 exclui da relação o resto da tabela da direita.'
+
+
+
 RIGHT JOIN 'mesma lógica do LEFT, só que para a outra tabela. Pega os dados completos da tabela da direita, incluindo os que também estão na tabela da direita.'
+
+
+
 FULL JOIN 'comando para pegar todos os valores das duas tabelas e unir em uma única resultante.
+
+
+
 É como pegar todos os produtos vendidos nas duas lojas da empresa e juntar todos esses registros para facilitar o controle ou a manipulação geral, por exemplo.'
 CROSS JOIN 'executa uma operação mais complexa, em que todos os itens de uma tabela estarão associados a cada item da outra. '
+
+
 
