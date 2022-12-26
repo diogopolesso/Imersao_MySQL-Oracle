@@ -129,7 +129,25 @@ tabela_de_clientes.NOME FROM tabela_de_vendedores RIGHT JOIN tabela_de_clientes
 ON tabela_de_vendedores.BAIRRO = tabela_de_clientes.BAIRRO;
 
 
+=> SUBCONSULTAS:
 
+SELECT CPF, COUNT(*) FROM notas_fiscais
+WHERE YEAR(DATA_VENDA) = 2016
+GROUP BY CPF
+HAVING COUNT(*) > 2000
+
+SUBCONSULTA EQUIVALENTE:
+  
+SELECT X.CPF, X.CONTADOR FROM 
+ (SELECT CPF, COUNT(*) AS CONTADOR FROM notas_fiscais
+ WHERE YEAR(DATA_VENDA) = 2016
+ GROUP BY CPF) X WHERE X.CONTADOR > 2000
+ 
+ => VIEWS - VISÃO 'é uma tabela lógica, resultado de uma consulta.
+ úteis quando precisamos disponibilizar parte do nosso banco de dados para uma pessoa externa, 
+ pois criamos uma tabela lógica com limites que garantam a segurança das informações e concedemos acesso somente a essa visão.'
+ 
+ 
 
 
 
