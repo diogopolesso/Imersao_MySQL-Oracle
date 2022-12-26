@@ -106,7 +106,30 @@ tabela_de_vendedores.NOME, DE_FERIAS,
 tabela_de_clientes.BAIRRO,
 tabela_de_clientes.NOME FROM tabela_de_vendedores, tabela_de_clientes;
 
-UNION 'Faz a união de uma ou mais tabelas.'
-UNION ALL 'Não se aplica o DISTINCT sobre o resultado final de uma consulta.'
+=> UNION 'Faz a união de uma ou mais tabelas.'
+=> UNION ALL 'Não se aplica o DISTINCT sobre o resultado final de uma consulta.'
+
+SELECT DISTINCT BAIRRO FROM tabela_de_clientes UNION SELECT DISTINCT BAIRRO FROM tabela_de_vendedores;
+
+SELECT DISTINCT BAIRRO, NOME, 'CLIENTE' AS TIPO FROM tabela_de_clientes UNION SELECT DISTINCT BAIRRO, NOME, 'VENDEDOR' AS TIPO FROM tabela_de_vendedores;
+
+SELECT DISTINCT BAIRRO, NOME, 'CLIENTE' AS TIPO_CLINTE, CPF FROM tabela_de_clientes UNION
+SELECT DISTINCT BAIRRO, NOME, 'VENDEDOR' AS TIPO_VENDEDOR, MATRICULA FROM tabela_de_vendedores;
+
+SELECT tabela_de_vendedores.BAIRRO, 
+tabela_de_vendedores.NOME, DE_FERIAS, 
+tabela_de_clientes.BAIRRO, 
+tabela_de_clientes.NOME FROM tabela_de_vendedores LEFT JOIN tabela_de_clientes
+ON tabela_de_vendedores.BAIRRO = tabela_de_clientes.BAIRRO
+UNION
+SELECT tabela_de_vendedores.BAIRRO,
+tabela_de_vendedores.NOME, DE_FERIAS,
+tabela_de_clientes.BAIRRO,
+tabela_de_clientes.NOME FROM tabela_de_vendedores RIGHT JOIN tabela_de_clientes
+ON tabela_de_vendedores.BAIRRO = tabela_de_clientes.BAIRRO;
+
+
+
+
 
 
