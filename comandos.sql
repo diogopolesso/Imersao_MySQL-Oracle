@@ -106,4 +106,7 @@ tabela_de_vendedores.NOME, DE_FERIAS,
 tabela_de_clientes.BAIRRO,
 tabela_de_clientes.NOME FROM tabela_de_vendedores, tabela_de_clientes;
 
+UNION 'Faz a união de uma ou mais tabelas.'
+UNION ALL 'Não se aplica o DISTINCT sobre o resultado final de uma consulta.'
+
 
