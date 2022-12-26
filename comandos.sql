@@ -147,6 +147,9 @@ SELECT X.CPF, X.CONTADOR FROM
  úteis quando precisamos disponibilizar parte do nosso banco de dados para uma pessoa externa, 
  pois criamos uma tabela lógica com limites que garantam a segurança das informações e concedemos acesso somente a essa visão.'
  
+SELECT A.NOME_DO_PRODUTO, A.EMBALAGEM, A.PRECO_DE_LISTA, X.MAIOR_PRECO 
+FROM tabela_de_produtos A INNER JOIN vw_maiores_ambalagens X ON A.EMBALAGEM = X.EMBALAGEM;
+ 
  
 
 
