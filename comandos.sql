@@ -1,4 +1,4 @@
-//COMANDOS no WORKBENCH:
+/* COMANDOS no WORKBENCH: */
 
 SELECT 'SELECIONAR'
 * 'o asterisco indica que você deseja mostrar todos os campos'
@@ -150,7 +150,3 @@ SELECT X.CPF, X.CONTADOR FROM
 SELECT A.NOME_DO_PRODUTO, A.EMBALAGEM, A.PRECO_DE_LISTA, X.MAIOR_PRECO 
 FROM tabela_de_produtos A INNER JOIN vw_maiores_ambalagens X ON A.EMBALAGEM = X.EMBALAGEM;
  
- 
-
-
-
