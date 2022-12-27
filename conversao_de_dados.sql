@@ -1,4 +1,4 @@
-REFERENCIAS COMPLETAS: https://dev.mysql.com/doc/refman/5.7/en/date-and-time-functions.html#function_date-format
+/* REFERENCIAS COMPLETAS: https://dev.mysql.com/doc/refman/5.7/en/date-and-time-functions.html#function_date-format */
 
 DATE_FORMAT(date,format) 'Formata o datevalor de acordo com a formatstring.'
 
