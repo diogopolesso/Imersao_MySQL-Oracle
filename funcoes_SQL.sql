@@ -56,3 +56,23 @@ FUNÇÕES MATEMATICAS;
 
 => ABS() 'retorna o valor absoluto (positivo) de um número.'
 
+SELECT (23+((25-2)/2)*45) AS RESULTADO;
+
+=> CEILING() 'retorna o menor valor inteiro maior ou igual a um número.'
+
+SELECT CEILING(12.3333335554452) AS RESULTADO;
+
+=> ROUND() 'arredonda um número para um número especificado de casas decimais.'
+
+SELECT ROUND(12.3333335554452) AS RESULTADO;
+
+=> FLOOR() 'retorna o maior valor inteiro menor ou igual a um número.'
+
+SELECT FLOOR(12.3333335554452) AS RESULTADO;
+
+=> RAND() 'retorna um número aleatório entre 0 (inclusivo) e 1 (exclusivo).'
+
+SELECT RAND() AS RESULTADO;
+
+
+
