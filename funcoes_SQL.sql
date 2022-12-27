@@ -1,4 +1,4 @@
-REFERENCIAS COMPLETAS: https://www.w3schools.com/sql/sql_ref_mysql.asp
+/* REFERENCIAS COMPLETAS: https://www.w3schools.com/sql/sql_ref_mysql.asp */
 
 => LTRIM() 'remove os espaços iniciais de uma string.'
 
@@ -21,7 +21,7 @@ SELECT UPPER('ola, tudo bem?') AS RESULTADO;
 SELECT SUBSTRING('OLÁ, TUDO BEM?', 5) AS RESULTADO;
 SELECT SUBSTRING('OLÁ, TUDO BEM?', 6, 4) AS RESULTADO;
 
-FUNÇÕES DE DATA:
+/* FUNÇÕES DE DATA: */
 
 =>ADDDATE() 'adiciona um intervalo de data/hora a uma data e, em seguida, retorna a data.'
 
@@ -37,7 +37,7 @@ SELECT CURRENT_TIME();
 
 SELECT CURRENT_TIMESTAMP();
 
-VARIAÇÕES:
+/* VARIAÇÕES: */
 
 SELECT YEAR(current_timestamp());
 SELECT DAY(current_timestamp());
@@ -52,7 +52,7 @@ SELECT DISTINCT DATA_VENDA, DAYNAME(DATA_VENDA) AS DIA, MONTHNAME(DATA_VENDA) AS
 
 SELECT NOME, TIMESTAMPDIFF (YEAR, DATA_DE_NASCIMENTO, CURDATE()) AS IDADE FROM  tabela_de_clientes;
 
-FUNÇÕES MATEMATICAS;
+/* FUNÇÕES MATEMATICAS */
 
 => ABS() 'retorna o valor absoluto (positivo) de um número.'
 
