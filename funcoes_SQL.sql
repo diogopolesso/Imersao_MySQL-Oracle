@@ -10,6 +10,7 @@ SELECT LTRIM('   OLÁ   ') AS RESULTADO;
 
 SELECT CONCAT('OLÁ', ' ', 'TUDO BEM', '?') AS RESULTADO;
 SELECT CONCAT(NOME, ' (', CPF, ') ') AS RESULTADO FROM tabela_de_clientes;
+
 SELECT NOME, CONCAT(ENDERECO_1, ' ', BAIRRO, ' ', CIDADE, ' ', ESTADO) AS COMPLETO FROM tabela_de_clientes;
 
 => UPPER() 'converte uma string em letras maiúsculas.'
