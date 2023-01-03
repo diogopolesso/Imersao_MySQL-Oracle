@@ -26,7 +26,15 @@ MATRICULA varchar(5) null,
 IMPOSTO float null,
 primary key (NUMERO));
 
+
+/*  alterar nome de uma coluna numa tabela:*/
+
 alter table vendas rename column DATA to DATA_VENDAS;
+
+/* alterar o nome de uma tabela:*/
+
+alter table vendas rename notas;
+
 
 create table itens_notas
 (NUMERO varchar(5) not null,
