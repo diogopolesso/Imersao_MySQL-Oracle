@@ -10,3 +10,10 @@ select * from sucos_vendas.tabela_de_produtos;
 select CODIGO_DO_PRODUTO as CODIGO, NOME_DO_PRODUTO as DESCRITOR,
 EMBALAGEM, TAMANHO, SABOR, PRECO_DE_LISTA as PRECO_LISTA
 from sucos_vendas.tabela_de_produtos;
+
+/* Eu não quero que na seleção daqui já venha produtos que eu já tenha a tabela aqui, então eu posso colocar: */
+
+select CODIGO_DO_PRODUTO as CODIGO, NOME_DO_PRODUTO as DESCRITOR,
+EMBALAGEM, TAMANHO, SABOR, PRECO_DE_LISTA as PRECO_LISTA
+from sucos_vendas.tabela_de_produtos
+where CODIGO_DO_PRODUTO not in (select CODIGO from produtos);
