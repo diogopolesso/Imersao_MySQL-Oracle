@@ -27,3 +27,11 @@ from sucos_vendas.tabela_de_produtos
 where CODIGO_DO_PRODUTO not in (select CODIGO from produtos);
 
 /*OBS: a ordem TEM QUE SER igualzinha a ordem que eu tenho na tabela destino. */
+
+insert into cliente 
+select CPF, NOME, ENDERECO_1 as ENDERECO, BAIRRO, CIDADE, ESTADO, CEP, 
+DATA_DE_NASCIMENTO as DATA_NASCIMENTO, IDADE, SEXO, LIMITE_DE_CREDITO as LIMITE_CREDITO, 
+VOLUME_DE_COMPRA as LIMITE_COMPRA, PRIMEIRA_COMPRA 
+from sucos_vendas.tabela_de_clientes 
+where CPF not in (select CPF from cliente);
+
