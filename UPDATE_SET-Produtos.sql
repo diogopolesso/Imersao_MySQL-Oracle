@@ -3,3 +3,4 @@ WHERE PRODUTO = '544931';
 
 UPDATE tbproduto SET NOME = 'Frescor do Verão', EMBALAGEM = 'Garrafa'
 WHERE PRODUTO = '1078680';
+
