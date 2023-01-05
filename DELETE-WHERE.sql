@@ -14,7 +14,13 @@ INSERT INTO PRODUTOS (CODIGO,DESCRITOR,SABOR,TAMANHO,EMBALAGEM,PRECO_LISTA)
          
 select * from produtos where substring(DESCRITOR,1,15) = 'Sabor dos Alpes';
 
+/* Para excluir um produto específico basta colocarmos a condição: */
+
 delete from produtos where CODIGO = '1001000';
+
+/* E para excluir todos os produtos 'Sabor dos Alpes' do tamanho um '1 litro': */
 
 delete from produtos where TAMANHO =  '1 Litro'
 and substring(DESCRITOR,1,15) = 'Sabor dos Alpes';
+
+
