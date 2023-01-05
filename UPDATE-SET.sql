@@ -20,3 +20,12 @@ porque a matéria-prima ficou mais cara,
 então foi uma decisão estratégica da empresa".*/
 
 update produtos set PRECO_LISTA = PRECO_LISTA * 1.10 where SABOR = 'Maracujá';
+
+/* Atualize o endereço do cliente com cpf 19290992743 
+para R. Jorge Emílio 23 o bairro para Santo Amaro, 
+a cidade para São Paulo, o estado para SP e o CEP para 8833223. */
+
+select * from cliente where CPF = '19290992743';
+
+update cliente set ENDERECO = 'R. Jorge Emílio 23', BAIRRO = 'Santo Amaro', 
+CIDADE = 'São Paulo', CEP = '8833223' where CPF = '19290992743';
