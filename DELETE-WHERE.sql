@@ -23,4 +23,17 @@ delete from produtos where CODIGO = '1001000';
 delete from produtos where TAMANHO =  '1 Litro'
 and substring(DESCRITOR,1,15) = 'Sabor dos Alpes';
 
+/* Exclusão usando como base o conteúdo de uma outra tabela: */
 
+select CODIGO_DO_PRODUTO from sucos_vendas.tabela_de_produtos;
+
+/* vamos listar uma série de produtos que são os produtos que existem na 
+tabela_de_produtos mas não existem na tabela produtos do outro banco: */
+
+select CODIGO from produtos 
+where CODIGO not in (select CODIGO_DO_PRODUTO from sucos_vendas.tabela_de_produtos);
+
+delete from produtos 
+where CODIGO not in (select CODIGO_DO_PRODUTO from sucos_vendas.tabela_de_produtos);
+
+/* agora as duas tabelas estão sincronizadas, e estão com os valores iguais. */
