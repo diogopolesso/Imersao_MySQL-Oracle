@@ -18,3 +18,13 @@ delete from produtos2;
 
 /* tomar cuidado realmente com qualquer delete, mas o delete from sem o WHERE, 
 você vai perder tudo que você tem dentro da sua tabela e não tem como recuperar. */
+
+/* Apaga a Tabela: */
+
+drop table notas;
+drop table itens_notas;
+
+/* Apaga os Dados da Tabela: */
+
+delete from notas;
+delete from itens_notas;
