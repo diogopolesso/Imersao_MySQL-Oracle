@@ -5,6 +5,7 @@ E eu vou escolher a opção Create Statement.
 Ao fazer isso, ele vai escrever o comando de SQL 
 para criar uma tabela igual aquela tabela que já existe: */
 
+
 CREATE TABLE `produtos` (
   `CODIGO` varchar(10) NOT NULL,
   `DESCRITOR` varchar(100) DEFAULT NULL,
