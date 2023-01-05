@@ -7,3 +7,16 @@ update produtos set PRECO_LISTA = 5 where CODIGO = '1000889';
 
 update produtos set DESCRITOR = 'Sabor da Montanha - 1 Litro - Uva', 
 TAMANHO = '1 Litro', EMBALAGEM = 'PET' where CODIGO = '1000889';
+
+/* modificação em lote ao mesmo tempo em vários registros, 
+e isso somente depende do tipo de filtro que eu vou usar no where, 
+então por exemplo, se eu fizer um select asterisco from produtos where sabor igual a maracujá, 
+vamos ver quantos produtos eu tenho sabor maracujá. */
+
+select * from produtos where SABOR = 'Maracujá';
+
+/* "Precisamos aumentar em 10% os preços de lista dos produtos sabor maracujá 
+porque a matéria-prima ficou mais cara, 
+então foi uma decisão estratégica da empresa".*/
+
+update produtos set PRECO_LISTA = PRECO_LISTA * 1.10 where SABOR = 'Maracujá';
