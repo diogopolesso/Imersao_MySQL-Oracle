@@ -19,3 +19,9 @@ values ('Cliente X', 'Rua Projetadas A', 'São Paulo', '2022-01-09');
 
 select * from tab_padrao;
 
+/* Eu não coloquei nada sobre endereço, sobre cidade e sobre data da criação: */
+
+insert into tab_padrao (DESCRITOR) values ('Cliente Y');
+
+/* não sendo mencionado no Insert valores para estes três campos, 
+uma SQL vai colocar na tabela os valores padronizados que foram colocados durante a criação da tabela. */
