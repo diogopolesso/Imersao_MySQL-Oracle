@@ -34,3 +34,14 @@ do um até o cinco, ele sabe que o próximo valor é o seis.
 Eu apaguei da tabela o cinco, mas não importa, na hora que eu incluir, 
 o campo é auto incremento, ele vai lá na estrutura sequência; quem é o próximo? É o seis. */
 
+/* E eu posso também forçar e dar um pulo para essa sequência: */
+
+insert into tab_identity (ID, DESCRITOR) values(100, 'cliente5');
+
+/* ao invés de Null, eu coloquei 100, ao fazer isso, a sequência interna foi para 100 */
+
+insert into tab_identity (ID, DESCRITOR) values(null, 'cliente7');
+
+/* Então agora inseri um novo cliente, cliente7, quando eu dou o meu Select, o valor foi para 101 (cento e um) 
+a sequência pulou e então vai crescendo de um em um e assim por diante. */
+
