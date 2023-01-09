@@ -28,7 +28,10 @@ values ('0101', '1000889', 100, 10);
 insert into itens_notas (NUMERO, CODIGO, QUANTIDADE, PRECO) 
 values ('0101', '1002334', 100, 10);
 
-/*  */
+/* o SELECT para a gente saber o faturamento e a data do faturamento: */
 
-
+select A.DATA_VENDAS, sum(B.QUANTIDADE * B.PRECO) as TOTAL_VENDA from 
+notas A inner join itens_notas B
+on A.NUMERO = B.NUMERO 
+group by A.DATA_VENDAS;
 
