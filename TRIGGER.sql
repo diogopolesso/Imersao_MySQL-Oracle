@@ -51,8 +51,37 @@ group by A.DATA_VENDAS;
 
 delete from itens_notas;
 delete from notas;
+delete from tab_faturamento;
 
-DELIMITER // /* A criação de novos objetos é fundamental para personalizar seu banco de dados de modo que o mesmo passe a, 
+delimiter //
+create trigger TG_CALCULA_FATURAMENTO_INSERT after insert on itens_notas
+for each row begin
+	delete from tab_faturamento;
+	insert into tab_faturamento
+	select A.DATA_VENDAS, sum(B.QUANTIDADE * B.PRECO) as TOTAL_VENDA from 
+	notas A inner join itens_notas B
+	on A.NUMERO = B.NUMERO 
+	group by A.DATA_VENDAS;
+end//
+
+/* DELIMITER // A criação de novos objetos é fundamental para personalizar seu banco de dados de modo que o mesmo passe a, 
 não só armazenar dados, como a realizar ações próprias, necessárias para seus sistemas.
 Objetos como triigers, stored procedures, views, etc tem como função, 
 realizar este tipo de personalização dentro do seu SGBD. */
+
+/* Vamos Inseri as notas: */ 
+
+insert into notas (NUMERO, DATA_VENDAS, CPF, MATRICULA, IMPOSTO)
+values ('0100', '2022-01-09', '1471156710', '235', 0.10);
+insert into itens_notas (NUMERO, CODIGO, QUANTIDADE, PRECO) 
+values ('0100', '1000889', 100, 10);
+insert into itens_notas (NUMERO, CODIGO, QUANTIDADE, PRECO) 
+values ('0100', '1002334', 100, 10);
+
+/* Agora eu vou rodar o SELECT na TAB_FATURAMENTO. */ 
+
+select * from tab_faturamento;
+
+/* A TAB_FATURAMENTO passou a ter 2000. 
+Quando eu dei o INSERT ele disparou a TRIGGER 
+e ao disparar a TRIGGER ele apagou a tabela de faturamento e inseriu o valor TOTAL. */
