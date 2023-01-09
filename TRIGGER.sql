@@ -30,8 +30,29 @@ values ('0101', '1002334', 100, 10);
 
 /* o SELECT para a gente saber o faturamento e a data do faturamento: */
 
+insert into tab_faturamento
 select A.DATA_VENDAS, sum(B.QUANTIDADE * B.PRECO) as TOTAL_VENDA from 
 notas A inner join itens_notas B
 on A.NUMERO = B.NUMERO 
 group by A.DATA_VENDAS;
 
+select * from tab_faturamento;
+
+/* Lembrando: quando eu incluo uma venda nova eu tenho que apagagar a tabela de Faturamento e atualizar a tabela de faturamento: */
+
+delete from tab_faturamento;
+insert into tab_faturamento
+select A.DATA_VENDAS, sum(B.QUANTIDADE * B.PRECO) as TOTAL_VENDA from 
+notas A inner join itens_notas B
+on A.NUMERO = B.NUMERO 
+group by A.DATA_VENDAS;
+
+/* A Forma Automática de fazer esses procedimentos quando for inserir dados na minha tabela através de TRIGGER : */
+
+delete from itens_notas;
+delete from notas;
+
+DELIMITER // /* A criação de novos objetos é fundamental para personalizar seu banco de dados de modo que o mesmo passe a, 
+não só armazenar dados, como a realizar ações próprias, necessárias para seus sistemas.
+Objetos como triigers, stored procedures, views, etc tem como função, 
+realizar este tipo de personalização dentro do seu SGBD. */
