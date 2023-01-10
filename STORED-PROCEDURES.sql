@@ -16,7 +16,7 @@ DELIMITER ;
 
 call hello_people;
 
-/* Outro exemplo é que Stored Procedures tambem pode me mostrar numeros ou calculos: */
+/* Outro exemplo é que Stored Procedures tambem pode me mostrar numeros: */
 
 DROP procedure IF EXISTS `calcular`;
 
@@ -31,3 +31,17 @@ DELIMITER ;
 
 call calcular;
 
+/*  OU resultado de calculos com o AS (alias): */
+
+DROP procedure IF EXISTS `calculo_alias`;
+
+DELIMITER $$
+USE `vendas_sucos`$$
+CREATE PROCEDURE `calculo_alias` ()
+BEGIN
+select (1 + 9) - 5 as resultado;
+END$$
+
+DELIMITER ;
+
+call calcular;
