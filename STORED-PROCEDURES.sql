@@ -16,3 +16,18 @@ DELIMITER ;
 
 call hello_people;
 
+/* Outro exemplo é que Stored Procedures tambem pode me mostrar numeros ou calculos: */
+
+DROP procedure IF EXISTS `calcular`;
+
+DELIMITER $$
+USE `vendas_sucos`$$
+CREATE PROCEDURE `calcular` ()
+BEGIN
+select (1 + 9) - 5;
+END$$
+
+DELIMITER ;
+
+call calcular;
+
