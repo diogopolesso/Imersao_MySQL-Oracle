@@ -51,6 +51,18 @@ call tipos_dados; -- RESULTADO: Teremos 4 resultados porque tivemos 4 select
 
 -- EXEMPLO 3:
 
+DROP procedure IF EXISTS `data_hora_local`;
 
+DELIMITER $$
+USE `vendas_sucos`$$
+CREATE PROCEDURE `data_hora_local` ()
+BEGIN
+declare hr datetime default localtimestamp;
+select hr;
+END$$
+
+DELIMITER ;
+
+call data_hora_local -- RESULTADO: DATA E HORA LOCAL (atual do computador)
 
 
