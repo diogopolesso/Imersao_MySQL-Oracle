@@ -65,4 +65,21 @@ DELIMITER ;
 
 call data_hora_local -- RESULTADO: DATA E HORA LOCAL (atual do computador)
 
+-- EXEMPLO 4:
+
+DROP procedure IF EXISTS `mesmo_tipos_dados`;
+
+DELIMITER $$
+USE `vendas_sucos`$$
+CREATE PROCEDURE `mesmo_tipos_dados` ()
+BEGIN
+declare data_1, data_2 date default '2022-01-10';
+select data_1, data_2;
+END$$
+
+DELIMITER ;
+
+call mesmo_tipos_dados; -- RESULTADO: Valores Iguais! '2022-01-10'
+
+-- OBS: Quando a gente declara duas ou mais variáveis na mesma linha, o que a gente coloca depois como "TIPO" e como "DEFAULT" vale para todo mundo da linha.
 
