@@ -12,11 +12,11 @@ END$$
 
 DELIMITER ;
 
-/* Para Chamar uma Stored Procedure, USAMOS: */ 
+-- Para Chamar uma Stored Procedure, USAMOS:
 
-call hello_people;
+call hello_people; /* RESULTADO: Hello People!! */
 
-/* Outro exemplo é que Stored Procedures tambem pode me mostrar numeros: */
+-- Outro exemplo é que Stored Procedures tambem pode me mostrar numeros:
 
 DROP procedure IF EXISTS `calcular`;
 
@@ -24,14 +24,14 @@ DELIMITER $$
 USE `vendas_sucos`$$
 CREATE PROCEDURE `calcular` ()
 BEGIN
-select (1 + 9) - 5;
+select (2 + 8) - 5;
 END$$
 
 DELIMITER ;
 
-call calcular;
+call calcular; /* RESULTADO: (2 + 8) - 5 = 5 */
 
-/*  OU resultado de calculos com o AS (alias): */
+-- OU resultado de calculos com o AS (alias):
 
 DROP procedure IF EXISTS `calculo_alias`;
 
@@ -39,9 +39,44 @@ DELIMITER $$
 USE `vendas_sucos`$$
 CREATE PROCEDURE `calculo_alias` ()
 BEGIN
-select (1 + 9) - 5 as resultado;
+select (2 + 8) - 5 as resultado;
 END$$
 
 DELIMITER ;
 
-call calcular;
+call calcular; /* RESULTADO: 5 */
+
+-- Podemos também CONCATENAR concat()
+
+DROP procedure IF EXISTS `funcoes`;
+
+DELIMITER $$
+USE `vendas_sucos`$$
+CREATE PROCEDURE `funcoes` ()
+BEGIN
+select concat('Hello People!', '......', (2 + 8) - 5) as itens_combinados;
+END$$
+
+DELIMITER ;
+
+call funcoes; /* RESULTADO: Hello People!......5 */
+
+-- Comentários na Stored Proceduresd:
+
+DROP procedure IF EXISTS `comentarios`;
+
+DELIMITER $$
+USE `vendas_sucos`$$
+CREATE PROCEDURE `comentarios` ()
+BEGIN
+/* Vamos exibir aqui nosso Comentario
+entre textos e numeros */
+-- Usando a função CONCAT
+
+select concat('Hello People!', '......', (2 + 8) - 5) as itens_combinados;
+END$$
+
+DELIMITER ;
+
+call comentarios; /* RESULTADO: Hello People!......5 */
+
