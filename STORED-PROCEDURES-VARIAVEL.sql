@@ -27,4 +27,30 @@ DELIMITER ;
 
 call variavel; -- RESULTADO: Hello People!
 
+-- EXEMPLO 2 com varios DECLARE:
+
+DROP procedure IF EXISTS `tipos_dados`;
+
+DELIMITER $$
+USE `vendas_sucos`$$
+CREATE PROCEDURE `tipos_dados` ()
+BEGIN
+declare x varchar(5) default 'TEXTO';
+declare y integer default 10;
+declare z decimal(4,2) default 50.15;
+declare w date default '2022-01-10';
+select x;
+select y;
+select z;
+select w;
+END$$
+
+DELIMITER ;
+
+call tipos_dados; -- RESULTADO: Teremos 4 resultados porque tivemos 4 select
+
+-- EXEMPLO 3:
+
+
+
 
