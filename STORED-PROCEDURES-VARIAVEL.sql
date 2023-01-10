@@ -11,5 +11,20 @@ DECIMAL(p,s)
 DATE
 TIMESTAMP
 
+-- EXEMPLO 1;
+
+DROP procedure IF EXISTS `variavel`;
+
+DELIMITER $$
+USE `vendas_sucos`$$
+CREATE PROCEDURE `variavel` ()
+BEGIN
+declare texto char(20) default 'Hello People!';
+select texto;
+END$$
+
+DELIMITER ;
+
+call variavel; -- RESULTADO: Hello People!
 
 
