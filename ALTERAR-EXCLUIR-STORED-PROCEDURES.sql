@@ -23,3 +23,5 @@ END$$
 DELIMITER ;
 
 -- DELETE STORED PROCEDURES:
+
+DROP procedure IF EXISTS `hello_World`;
