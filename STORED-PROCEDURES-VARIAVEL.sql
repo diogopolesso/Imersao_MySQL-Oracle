@@ -83,3 +83,21 @@ call mesmo_tipos_dados; -- RESULTADO: Valores Iguais! '2022-01-10'
 
 -- OBS: Quando a gente declara duas ou mais variáveis na mesma linha, o que a gente coloca depois como "TIPO" e como "DEFAULT" vale para todo mundo da linha.
 
+-- EXEMPLO 5:
+
+DROP procedure IF EXISTS `atribui_valor`;
+
+DELIMITER $$
+USE `vendas_sucos`$$
+CREATE PROCEDURE `atribui_valor` ()
+BEGIN
+declare texto varchar(30) default 'Texto Inicial';
+select texto;
+set texto = 'Texto Modificado';
+select texto;
+END$$
+
+DELIMITER ;
+
+call atribui_valor; -- RESULTADO: Inicialmente, o valor de texto era "TEXTO INICIAL" Depois ficou "TEXTO MODIFICADO".
+
