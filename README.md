@@ -1,4 +1,4 @@
-# **Imersao MySQL Oracle**
+# **Imersao MySQL Oracle** <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original-wordmark.svg" width="60"/>
 
 Nesta imersão você encontrara exercicios e comandos SQL com MySQL Server Oracle.
 Linguagem com o banco de dados de código aberto mais popular.
@@ -18,6 +18,3 @@ Utilizado em aplicações web, entre elas, o Facebook e o Twitter.
 Nota: Foram feitas mais de 320 atividades para esse resultado de estudo.
 
 ---------------------------------------------------------------------
-
-
-
