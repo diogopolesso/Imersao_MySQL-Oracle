@@ -8,3 +8,4 @@ END IF
 
 -- EXEMPLO:
 
+select * from tabela_de_clientes;
