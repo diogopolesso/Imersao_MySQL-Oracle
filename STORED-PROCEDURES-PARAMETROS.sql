@@ -1,3 +1,6 @@
+/* Ao invés de declarar as variáveis e colocar la dentro o que eu quero inserir, 
+eu vou colocar como parâmetro o valor que vai ser inserido dentro da tabela de produtos. */
+
 DROP procedure IF EXISTS `inclui_novo_parametro`;
 
 DELIMITER $$
