@@ -43,3 +43,39 @@ DELIMITER ;
 ;
 
 call cursor_primeiro_contato; -- RESULTADO = Retorna 4 Posições
+
+/* Looping com Cursor
+Eu tenho que saber quando que o "CURSOR" vai acabar. Ou mais precisamente, antes de dar um "FETCH", 
+eu tenho que saber se o"CURSOR" acabou ou não. Eu posso FORÇAR O erro colocando um quinto "FETCH", 
+normalmente, Eu não sei quantas posições o "CURSOR" tem. Como é que a gente faz isso? 
+usando o "LOOPING": */
+
+DROP procedure IF EXISTS `cursor_looping`;
+
+USE `sucos_vendas`;
+DROP procedure IF EXISTS `sucos_vendas`.`cursor_looping`;
+;
+
+DELIMITER $$
+USE `sucos_vendas`$$
+CREATE DEFINER=`root`@`localhost` PROCEDURE `cursor_looping`()
+BEGIN
+declare fim_do_cursor int default 0;
+declare vNome varchar(50);
+declare c cursor for select nome from tabela_de_clientes;
+declare continue handler for not found set fim_do_cursor = 1;
+open c;
+while fim_do_cursor = 0
+DO
+	fetch c into vNome;
+    IF fim_do_cursor = 0 THEN
+    select vNome;
+    END IF;
+END WHILE;
+CLOSE c;
+END$$
+
+DELIMITER ;
+;
+
+call cursor_looping; -- RESULTADO = Retorna Varias Posições, Um resultado para cada cliente da tabela e ele foi até o final do "CURSOR".
