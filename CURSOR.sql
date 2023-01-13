@@ -18,4 +18,28 @@ E chego no final do "CURSOR".
 
 -- EXEMPLO PRATICO:
 
+DROP procedure IF EXISTS `sucos_vendas`.`cursor_primeiro_contato`;
+;
 
+DELIMITER $$
+USE `sucos_vendas`$$
+CREATE DEFINER=`root`@`localhost` PROCEDURE `cursor_primeiro_contato`()
+BEGIN
+declare vNome varchar(50);
+declare c cursor for select nome from tabela_de_clientes limit 4; 
+OPEN c;
+fetch c into vNome;
+select vNome;
+fetch c into vNome;
+select vNome;
+fetch c into vNome;
+select vNome;
+fetch c into vNome;
+select vNome;
+close c;
+END$$
+
+DELIMITER ;
+;
+
+call cursor_primeiro_contato; -- RESULTADO = Retorna 4 Posições
