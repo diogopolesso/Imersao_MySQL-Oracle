@@ -18,5 +18,27 @@ com intervalos de 1 a 1, até o número final.
 Cada interação eu incluo o valor da sequência dentro dessa tabela.
 */
 
+DROP procedure IF EXISTS `looping_while`;
 
+DELIMITER $$
+USE `sucos_vendas`$$
+CREATE PROCEDURE `looping_while` (vNumeroInicial int, vNumeroFinal int)
+BEGIN
+	declare vContador int;
+    delete from tab_looping;
+    set vContador = vNumeroInicial;
+    while vContador <= vNumeroFinal
+    DO
+		insert into tab_looping (id) values (vContador);
+        set vContador = vContador + 1;
+	END WHILE;
+    select * from tab_looping;
+END$$
 
+DELIMITER ;
+
+call looping_while (1, 10); -- RESULTADO = Gera uma tabela que vai de um até 10
+
+call looping_while (1, 100); -- RESULTADO = Gera uma tabela que vai de um até cem
+
+call looping_while (1, 1000); -- RESULTADO = Gera uma tabela que vai de um até mil
