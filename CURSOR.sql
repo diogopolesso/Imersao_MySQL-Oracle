@@ -79,3 +79,45 @@ DELIMITER ;
 ;
 
 call cursor_looping; -- RESULTADO = Retorna Varias Posições, Um resultado para cada cliente da tabela e ele foi até o final do "CURSOR".
+ 
+-- Associando mais de uma variavel:
+
+select * from tabela_de_clientes
+
+/* Eu tenho aqui o nome do cliente, endereço, bairro, cidade, estado e o CEP. 
+Vou montar uma saída que seja todos esses campos concatenados: */
+
+DROP procedure IF EXISTS `looping_cursor_multiplas_colunas`;
+
+USE `sucos_vendas`;
+DROP procedure IF EXISTS `sucos_vendas`.`looping_cursor_multiplas_colunas`;
+;
+
+DELIMITER $$
+USE `sucos_vendas`$$
+CREATE DEFINER=`root`@`localhost` PROCEDURE `looping_cursor_multiplas_colunas`()
+BEGIN
+declare fim_do_cursor int default 0;
+declare vCidade, vEstado, vCep varchar (50);
+declare vNome, vEndereco varchar (150);
+declare  c cursor for select nome, endereco_1, cidade, estado, cep from tabela_de_clientes;
+declare continue handler for not found set fim_do_cursor = 1;
+open c;
+while fim_do_cursor =0
+DO
+	fetch c into vNome, vEndereco, vCidade, vEstado, vCep;
+    IF fim_do_cursor = 0 THEN select concat(vNome, ', Endereço: ', vEndereco, ', ', vCidade, ' - ', vEstado, ', CEP: ' , + vCep);
+END IF;
+END WHILE;
+CLOSE c;
+
+END$$
+
+DELIMITER ;
+
+call looping_cursor_multiplas_colunas; 
+
+-- RESULTADO = concat(vNome, ', Endereço: ', vEndereco, ', ', vCidade, ' - ', vEstado, ', CEP: ' , + vCep)
+--             Fábio Carvalho, Endereço: R. dos Jacarandás da Península, Rio de Janeiro - RJ, CEP: 22002020
+
+
