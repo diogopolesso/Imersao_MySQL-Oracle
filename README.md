@@ -21,8 +21,8 @@ Nota: Foram feitas mais de 320 atividades para esse resultado de estudo.
 
 ## Principais Mecanismos de Armazenamento:
 
-- MyISAM
-- InnoDB
-- MEMORY
+- MyISAM - Não é um mecanismo puramente transacional, ele não implementa mecanismos de bloqueio dos registros dentro das tabelas.
+- InnoDB - Mecanismo de armazenamento usando quando eu vou realmente ter um banco de dados transacional.
+- MEMORY - Mecanismo de armazenamento que cria tabelas apenas na memória RAM.
 
 ****
