@@ -1,4 +1,11 @@
--- Função que pega o cliente de forma aleatória.
+-- Função que obtem um cliente de forma aleatória.
+
+-- OBS: Normalmente, as instalações MySQL não permitem que você crie funções.
+-- para o ambiente MySQL poder criar funções é preciso estipular um parâmetro:
+
+SET GLOBAL LOG_BIN_TRUST_FUNCTION_CREATORS = 1;
+
+-- DEPOIS = CREATE FUNCTION:
 
 DROP function IF EXISTS `f_cliente_aleatorio`;
 
@@ -20,4 +27,4 @@ END$$
 
 DELIMITER ;
 
-
+select f_cliente_aleatorio(); -- RESULTADO = Cada vez que rodar essa função ela me tras um CPF ALEATÓRIO
