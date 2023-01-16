@@ -4,7 +4,7 @@ Nesta imersão você encontrara exercicios e comandos SQL com MySQL Server Oracl
 Linguagem com o banco de dados de código aberto mais popular.
 Utilizado em aplicações web, entre elas, o Facebook e o Twitter.
 
----------------------------------------------------------------------
+****
 
 ## Cursos que este conteudo foi aplicado:
 
@@ -17,4 +17,13 @@ Utilizado em aplicações web, entre elas, o Facebook e o Twitter.
 
 Nota: Foram feitas mais de 320 atividades para esse resultado de estudo.
 
----------------------------------------------------------------------
+****
+
+## Principais Mecanismos de Armazenamento:
+
+- MyISAM
+- InnoDB
+- MEMORY
+
+****
+
