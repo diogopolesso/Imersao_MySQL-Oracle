@@ -26,4 +26,3 @@ Nota: Foram feitas mais de 320 atividades para esse resultado de estudo.
 - MEMORY
 
 ****
-
