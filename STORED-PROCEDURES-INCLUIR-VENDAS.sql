@@ -55,5 +55,3 @@ select A.NUMERO, count(*) as NUMERO_ITENS, sum(B.QUANTIDADE * B.PRECO) as FATURA
 from notas_fiscais A inner join itens_notas_fiscais B
 on A.NUMERO = B.NUMERO where A.DATA_VENDA = '20220116'
 group by A.NUMERO;
-
-
