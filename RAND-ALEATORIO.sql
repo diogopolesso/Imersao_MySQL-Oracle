@@ -28,3 +28,4 @@ END$$
 DELIMITER ;
 
 select f_cliente_aleatorio(); -- RESULTADO = Cada vez que rodar essa função ela me tras um CPF ALEATÓRIO.
+
