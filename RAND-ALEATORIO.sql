@@ -11,7 +11,7 @@ DROP function IF EXISTS `f_cliente_aleatorio`;
 
 DELIMITER $$
 USE `sucos_vendas`$$
-CREATE FUNCTION `f_cliente_aleatorio` ()
+CREATE FUNCTION `f_cliente_aleatorio` () returns int (11)
 RETURNS INTEGER
 BEGIN
 	declare vRetorno varchar(11);
