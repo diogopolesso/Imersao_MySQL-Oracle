@@ -7,6 +7,13 @@ select floor(rand() * (300-15+1) + 15);
 
  -- EXEMPLO PRATICO:
  
+-- OBS: Normalmente, as instalações MySQL não permitem que você crie funções.
+-- para o ambiente MySQL poder criar funções é preciso estipular um parâmetro:
+
+SET GLOBAL LOG_BIN_TRUST_FUNCTION_CREATORS = 1;
+
+-- DEPOIS = CREATE FUNCTION:
+
  DROP function IF EXISTS `f_numero_aleatorio`;
 
 DELIMITER $$
