@@ -1,4 +1,4 @@
--- Função que obtem um cliente de forma aleatória.
+-- Função que obtem um CLIENTE de forma aleatória.
 
 -- OBS: Normalmente, as instalações MySQL não permitem que você crie funções.
 -- para o ambiente MySQL poder criar funções é preciso estipular um parâmetro:
