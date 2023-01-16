@@ -35,3 +35,11 @@ Se eu abrir esse daqui, eu tenho aqui o script de criação, drop create da tamb
 E aí, eu crio como se estivesse rodando um para cada tabela, essa opção do Workbench já cria uma pasta com todos os pontos sqls criados lá dentro. Claro que finalmente, depois que a gente termina de gerar o backup, eu destranco a instância.
 
 Vou rodar aqui. Rodou com sucesso aqui em baixo. Então, pronto, o meu banco já está pronto para ser consultado novamente, o meu backup está salvo. Então é isso aí, eu quis mostrar para vocês, além do uso do Mysqldump, como eu posso tirar o backup lógico através do Workbench.
+
+Para fazer o backup por arquivos, efetue os seguintes passos:
+
+Pare o serviço do MySQL.
+Criei o diretório de Backup no computador.
+Copie todo o diretório Data para o novo diretório criado anteriormente.
+Copie o arquivo de configuração my.ini e substitua quando o mesmo for recuperado.
+Suba o serviço do MySQL.
