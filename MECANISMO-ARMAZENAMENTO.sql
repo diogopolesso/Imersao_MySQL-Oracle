@@ -1,4 +1,4 @@
-create table defalt_table (ID integer, NOME varchar(100)); -- Se eu não informar nada para a minha tabela ela ira criar automaticamente um Mecanismo de Armazenamento InnoDB.
+create table defalt_table (ID integer, NOME varchar(100)); -- Se eu não informar nada para a minha tabela qual mecanismo de armazenamento eu quero operar, ela ira criar automaticamente um Mecanismo de Armazenamento InnoDB por padrão.
 
 alter table defalt_table engine = MyISAM; -- Estou alterando minha tabela para um Mecanismo de Armazenamento MyISAM.
 
