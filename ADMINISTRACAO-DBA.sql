@@ -107,3 +107,8 @@ grant select on SUCOS_VENDAS.tabela_de_produtos to'user05'@'%'; -- POSSO AINDA D
 
 select * from mysql.user; -- PARA VER TODOS OS USUARIOS E SUAS INFORMAÇÕES 
 
+show grants for 'user02'@'localhost'; -- VEJO TODOS OS PRIVILEGIOS DE UM UM USUARIO EM ESPECIFICO
+
+revoke all privileges, grant option from 'user02'@'localhost'; -- VAI LIMPAR TODOS OS PRIVILEGIOS DESSE USUARIO
+
+
