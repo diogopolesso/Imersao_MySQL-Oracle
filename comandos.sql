@@ -164,6 +164,7 @@ explain format=json select A.NOME_DO_PRODUTO from tabela_de_produtos A;
        "rows_produced_per_join": 36,
        "filtered": "1..."
        
+****
 
 -- PLANO DE EXECUÇÃO NO WORKBENCH:
 
@@ -185,3 +186,14 @@ drop user 'admin01'@'localhost'
 create user 'user01'@'localhost' identified by 'user01';
 grant select, insert, update, delete, create temporary tables, lock tables, execute on *.* to'user01'@'localhost';
 
+-- CRIANDO USUARIO POR LINHA DE COMANDO NO WORCKBENCH COM PRIVILEGIOS DE APENAS LEITURA:
+
+--           USUARIO:   LOCAL:                  SENHA:
+create user 'user02'@'localhost' identified by 'user02';
+grant select, execute on *.* to'user02'@'localhost';
+
+-- CRIANDO USUARIO POR LINHA DE COMANDO NO WORCKBENCH COM PRIVILEGIOS APENAS PARA BACKUP:
+
+--           USUARIO:   LOCAL:                  SENHA:
+create user 'user03'@'localhost' identified by 'user03';
+grant select, reload, lock tables, replication client on *.* to'user03'@'localhost';
