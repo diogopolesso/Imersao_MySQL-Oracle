@@ -164,3 +164,7 @@ explain format=json select A.NOME_DO_PRODUTO from tabela_de_produtos A;
        "rows_produced_per_join": 36,
        "filtered": "1...
        
+-- PLANO DE EXECUÇÃO NO WORKBENCH:
+
+
+
