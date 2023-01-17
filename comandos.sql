@@ -199,8 +199,36 @@ grant select, reload, lock tables, replication client on *.* to'user03'@'localho
 
 -- ACESSANDO O MySQL DE QUALQUER SERVIDOR:
 
--- Na criação de um usuario se manter % (percent) na caixa de diálogo, significa que o administrador ou user que for criado, vai poder acessar de qualquer lugar o MySL
+*/ Na criação de um usuario se manter % (percent) na caixa de diálogo, significa que o administrador ou user que for criado, 
+vai poder acessar de qualquer lugar o MySL */
 
 --         USUARIO:   LOCAL:            SENHA:
 create user 'admin01'@'%' identified by 'admin01';
 grant all privileges on *.* to'admin01'@'%' with grant option;
+
+/*
+OBS:
+Existem várias formas de usar esse caractere percent, exemplos:
+
+Se no lugar de percent, eu colocar 192.168.1.%, tudo daqui para trás é genérico, 
+então qualquer IP deste... se o cara tiver no IP 192.168.1.0, até 192.168.1.255, 
+que é o máximo que ele pode ir, ele vai conseguir acessar na base. 
+Se eu substituir o percent por underscore, o underscore vai substituir qualquer número que esteja aqui ou letra.
+
+No caso, se eu usar 192.168.1.1., dois underscore, eu posso ir do 00 ao 255, é o range de IP que eu posso estar usando e por exemplo, 
+se eu colocar não um IP, mas um endereço URL, por exemplo: client.mycompany.com, eu posso usar client dentro do lugar do underscore, 
+pode ser qualquer letra ou número “.mycompany.com”, porque as vezes eu posso ter sites diferentes, mas usando sempre o mesmo sufixo.
+
+Aí, eu posso, se eu tiver o domínio, por exemplo, mycompany.com, eu posso acessar o MySQL de qualquer máquina, domínio, por exemplo. 
+Então, no lugar onde eu botei o percent, eu posso botar esses endereços dessa forma, que aí, 
+eu vou estar dando privilégios de conexão através de outras máquinas, sem ser o localhost.
+*/
+
+-- SCHEMA PRIVILEGES:
+
+-- CRIANDO USUARIO POR LINHA DE COMANDO NO WORCKBENCH COM SCHEMA PRIVILEGES:
+
+--     USUARIO:   LOCAL:               SENHA:
+create user 'user04'@'%' identified by 'user04';
+grant select, insert, update, delete, create temporary tables, lock tables, execute on SUCOS_VENDAS.* to'user04'@'%';
+
