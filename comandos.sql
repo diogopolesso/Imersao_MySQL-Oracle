@@ -162,9 +162,26 @@ explain format=json select A.NOME_DO_PRODUTO from tabela_de_produtos A;
        "access_type": "ALL",
        "rows_examined_per_scan": 36,
        "rows_produced_per_join": 36,
-       "filtered": "1...
+       "filtered": "1..."
        
+
 -- PLANO DE EXECUÇÃO NO WORKBENCH:
 
+-- Quando vemos um retângulo em verde no plano de execução, significa que aquele Table Scan está usando um índice.
 
+-- CRIANDO USUARIO POR LINHA DE COMANDO NO WORCKBENCH COM TODOS OS PRIVILEGIOS DBA:
+
+--           USUARIO:   LOCAL:                  SENHA:
+create user 'admin01'@'localhost' identified by 'admin01';
+grant all privileges on *.* to'admin01'@'localhost' with grant option;
+
+-- DELETAR USUARIO:
+
+drop user 'admin01'@'localhost'
+
+-- CRIANDO USUARIO POR LINHA DE COMANDO NO WORCKBENCH COM PRIVILEGIOS DE MANUTENÇÃO COMUM:
+
+--           USUARIO:   LOCAL:                  SENHA:
+create user 'user01'@'localhost' identified by 'user01';
+grant select, insert, update, delete, create temporary tables, lock tables, execute on *.* to'user01'@'localhost';
 
