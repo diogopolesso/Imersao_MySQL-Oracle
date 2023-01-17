@@ -164,7 +164,6 @@ explain format=json select A.NOME_DO_PRODUTO from tabela_de_produtos A;
        "rows_produced_per_join": 36,
        "filtered": "1..."
        
-****
 
 -- PLANO DE EXECUÇÃO NO WORKBENCH:
 
@@ -197,3 +196,11 @@ grant select, execute on *.* to'user02'@'localhost';
 --           USUARIO:   LOCAL:                  SENHA:
 create user 'user03'@'localhost' identified by 'user03';
 grant select, reload, lock tables, replication client on *.* to'user03'@'localhost';
+
+-- ACESSANDO O MySQL DE QUALQUER SERVIDOR:
+
+-- Na criação de um usuario se manter % (percent) na caixa de diálogo, significa que o administrador ou user que for criado, vai poder acessar de qualquer lugar o MySL
+
+--         USUARIO:   LOCAL:            SENHA:
+create user 'admin01'@'%' identified by 'admin01';
+grant all privileges on *.* to'admin01'@'%' with grant option;
