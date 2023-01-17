@@ -143,3 +143,9 @@ unlock instance; -- Destranca o Banco
 /* Comando explain, me dá o plano de execução da consulta, é como se fosse um pré-planejamento do que o MySQL vai fazer para resolver aquela consulta, 
 independente do plano de execução que eu vou estar seguindo, eu posso tomar algumas atitudes em termos de performance do eu banco, 
 para que as minhas consultas fiquem de uma certa maneira, um pouco mais rápidas. */
+
+explain select A.NOME_DO_PRODUTO from tabela_de_produtos A;
+
+-- OR
+
+explain format=json select A.NOME_DO_PRODUTO from tabela_de_produtos A;
