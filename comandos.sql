@@ -144,8 +144,23 @@ unlock instance; -- Destranca o Banco
 independente do plano de execução que eu vou estar seguindo, eu posso tomar algumas atitudes em termos de performance do eu banco, 
 para que as minhas consultas fiquem de uma certa maneira, um pouco mais rápidas. */
 
-explain select A.NOME_DO_PRODUTO from tabela_de_produtos A;
+explain select A.NOME_DO_PRODUTO from tabela_de_produtos A; 
+-- RESULTADO = 	PLANO DE EXECUÇÃOE EM FORMATO DE TABELA	
 
 -- OR
 
-explain format=json select A.NOME_DO_PRODUTO from tabela_de_produtos A;
+explain format=json select A.NOME_DO_PRODUTO from tabela_de_produtos A; 
+-- RESULTADO = PLANO DE EXECUÇÃOE EM FORMATO JSON
+{
+   "query_block": {
+     "select_id": 1,
+     "cost_info": {
+       "query_cost": "3.85"
+     },
+     "table": {
+       "table_name": "A",
+       "access_type": "ALL",
+       "rows_examined_per_scan": 36,
+       "rows_produced_per_join": 36,
+       "filtered": "1...
+       
