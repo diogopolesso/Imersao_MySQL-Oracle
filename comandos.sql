@@ -232,3 +232,10 @@ eu vou estar dando privilégios de conexão através de outras máquinas, sem se
 create user 'user04'@'%' identified by 'user04';
 grant select, insert, update, delete, create temporary tables, lock tables, execute on SUCOS_VENDAS.* to'user04'@'%';
 
+-- CRIANDO USUARIO POR LINHA DE COMANDO NO WORCKBENCH COM SCHEMA PRIVILEGES E LIMITAÇÃO DE TABELA:
+
+--     USUARIO:   LOCAL:               SENHA:
+create user 'user05'@'%' identified by 'user05';
+grant select, insert, update, delete on SUCOS_VENDAS.tabela_de_clientes to'user05'@'%';
+
+grant select on SUCOS_VENDAS.tabela_de_produtos to'user05'@'%'; -- POSSO AINDA DAR UM GRANT DIFERENTE PARA OUTRA TABELA.
